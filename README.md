@@ -48,10 +48,9 @@ cd dbt_scooters
 ```sql
 create extension postgis schema public;
 ```
-## PostGIS
 
-Если используется Postgres в docker из официального образа, то в нем может не быть расширение PostGIS, в этом случае замените образ на PostGIS. 
-В случае возникновения предупреждения "collation version", запустите:
+Если используется Postgres в docker из официального образа, то в нем может не быть расширения PostGIS, в этом случае замените образ на PostGIS. 
+После замены образа в случае возникновения предупреждения "collation version", запустите:
 
 ```sql
 REINDEX DATABASE postgres; 
