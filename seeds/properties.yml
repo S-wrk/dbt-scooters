@@ -8,4 +8,6 @@ seeds:
   - name: "event_types"
     description: "Meaningful types of mobile app events"
   - name: "age_groups"
-    description: "Age groups to split users for analysis"    
+    description: "Age groups to split users for analysis"
+  - name: "first_name_sex_manual"
+    description: "Sex by first name for users analysis"        
