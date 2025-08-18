@@ -57,4 +57,7 @@ REINDEX DATABASE postgres;
 ALTER DATABASE postgres REFRESH COLLATION VERSION;
 ```
 
+## Полезные макросы
+
+- `dbt run-operation create_role --args "name: finance"` - создание роли в базе (на примере роли "finance")
 ...
