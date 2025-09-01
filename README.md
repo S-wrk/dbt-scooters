@@ -67,10 +67,26 @@ ALTER DATABASE postgres REFRESH COLLATION VERSION;
 
 https://inzhenerka.github.io/dbt-scooters
 
-...
 
 2. Установите dbt и другие зависимости:
    
 ```bash
 pip install -r requirements.txt
 ```
+
+## Расширения в dbt 
+В dbt предусмотрена концепция пакетов расширений (packages), которые добавляют в проект готовую бизнес-логику в виде макросов, тестов и даже моделей для решения различных узких задач. Для помощи с распространением пакетов существует бесплатный маркетплейс dbt Hub https://hub.getdbt.com/, где можно найти аддоны на разные случаи жизни.
+Чтобы установить любой пакет dbt, надо в корне проекта создать файл dependencies.yml и указать в нем название и версию пакета в поле packages:
+```
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.3.0
+```
+Установить все пакеты из dependencies.yml командой:
+    dbt deps
+
+Как удалить ненужные пакеты из проекта:
+
+    Удалить их из файла dependencies.yml.
+    Удалить всю папку с пакетами dbt_packages.
+    Установить аддоны заново командой dbt deps.
