@@ -16,12 +16,9 @@ select
     f.last_name,
     f.phone,
     f.sex,
-    case
-        when f.fns_sex is null then fnsm.sex
-        else f.fns_sex
-    end as sex_added,
-    f.birth_date
+    f.birth_date,
+    coalesce(f.fns_sex, fnsm.sex) as sex_added
 from
     first_name_sex_cte as f
-left join {{ ref("first_name_sex_manual") }} fnsm
+left join {{ ref("first_name_sex_manual") }} as fnsm
     using (first_name)
