@@ -5,5 +5,5 @@ from
     {{ source("scooters_raw", "users") }}
 where
     sex is not null
-order by 
-    1    
+order by
+    1
